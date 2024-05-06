@@ -4,9 +4,13 @@ from catalog.models import Author, Genre, Book, BookInstance
 # admin.site.register(Book)
 # admin.site.register(BookInstance)
 # Register the Admin classes for Book using the decorator
+class BookInstanceInline(admin.TabularInline):
+    model = BookInstance
+
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'display_genre')
+    inlines = [BookInstanceInline]
 
 # Register the Admin classes for BookInstance using the decorator
 @admin.register(BookInstance)
