@@ -81,7 +81,8 @@ DATABASES = {
         'NAME': 'test',
         'USER' : 'uxmin',
         'PASSWORD' : 'uxmin', 
-        'HOST' : 'db',
+        #'HOST' : 'db', # docker compose 로 실행 할때 
+        'HOST' : 'localhost', # 로컬에서 실행 할때
         'PORT' : '3306',
     }
 }
